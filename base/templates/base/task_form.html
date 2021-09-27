@@ -1,0 +1,24 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+    <div class="header-bar">
+        <a href="{% url 'tasks' %}"> &#8592; Back </a>
+    </div>
+
+    <h2> Add a Task </h2>
+
+    <div class="card-body">
+        <form method="post">
+            <!-- Django security -->
+            {% csrf_token %}
+
+            <!-- Form -->
+            {{ form.as_p }}
+
+            <!-- Adding a new task -->
+            <button class="button" type="submit"> Add Task </button>
+        </form>
+    </div>
+
+
+{% endblock %}
